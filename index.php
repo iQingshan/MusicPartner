@@ -1,4 +1,10 @@
 <?php
+
+/*
+ * @Author：青山（qingshan@88.com）
+ * @Title：网易云音乐合伙人
+ */
+
 $user = $_REQUEST['user'];
 $pwd = urlencode($_REQUEST['pwd']);
 
@@ -25,25 +31,18 @@ if(isset($user)){
 
 
 function curl_get($url,$headers,$cookie=FALSE){
-		$curl=curl_init();
-		curl_setopt($curl, CURLOPT_URL, $url);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
+	$curl=curl_init();
+	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE); 
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE); 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl, CURLOPT_HTTPHEADER,$headers);
         if($cookie){
-		     curl_setopt($curl, CURLOPT_COOKIE,$cookie);
+	     curl_setopt($curl, CURLOPT_COOKIE,$cookie);
         }
-		curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 1800);
-		//curl_setopt($curl, CURLOPT_POST, 1);
-		
-        //curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-		
+	curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 1800);
         $output = curl_exec($curl);
-		
         curl_close($curl);
-		//$output=json_decode($output,true);
         return $output;
-		//print_r($output);
 }
