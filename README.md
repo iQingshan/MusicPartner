@@ -11,9 +11,9 @@
 
 #### 安装教程
     1.配置环境 nginx php7.0 
-    2.配置Login.php文件 
+    2.配置index.php文件 
     3.带着cookie请求即可
-    4.计划任务为 http://你的域名/Login.php?user=你的账号&pwd=你的密码 【每天一次】
+    4.计划任务为 http://你的域名/index.php?user=你的账号&pwd=你的密码 【每天一次】
 
 #### 使用说明
 
