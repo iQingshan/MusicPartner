@@ -114,6 +114,7 @@ class API{
         $info = array("taskId"=>$data['data']['id'],"csrf_token"=>$_COOKIE["__csrf"]);
         $array = [];
         foreach ($data['data']['works'] as $xh=>$work){
+	    sleep(3);
             $xing = rand(3,4);
             $info['score'] = $xing;
             $info['tags'] = $xing.'-A-1';
